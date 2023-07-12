@@ -143,18 +143,19 @@
           </div>
           <div class="col-lg-8">
             <div class="container mt-5">
-              <form class="row g-3">
+              <form class="row g-3" name="contact" method="POST" data-netlify="true" onSubmit="submit" data-netlify-honeypot="bot-field">
+                <input name="bot-field" style="display: none;">
                 <div class="col-md-6">
                   <label for="firstName" class="form-label">First Name</label>
-                  <input type="text" class="form-control" id="firstName" required>
+                  <input type="text" class="form-control" id="firstName" name="name" required>
                 </div>
                 <div class="col-md-6">
                   <label for="lastName" class="form-label">Last Name</label>
-                  <input type="text" class="form-control" id="lastName" required>
+                  <input type="text" class="form-control" id="lastName" name="name" required>
                 </div>
                 <div class="col-md-8">
                   <label for="emailInfo" class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="emailInfo" required>
+                  <input type="email" class="form-control" id="emailInfo" name="email" required>
                 </div>
                 <div class="col-md-4">
                   <label for="phoneNumber" class="form-label">Phone Number</label>
@@ -191,6 +192,19 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
       <script src="main.js"></script>
-
+      <script>
+        function submitForm(event) {
+          event.preventDefault(); // Prekid podnošenja forme kako bi se izvršio JavaScript kod
+          
+          // Prikazivanje alert poruke
+          alert("Poruka je poslata!");
+          
+          // Resetovanje forme
+          document.getElementById("contact-form").reset();
+        }
+        
+        // Dodavanje event listenera na formu
+        document.getElementById("contact-form").addEventListener("submit", submitForm);
+      </script>
 </body>
 </html>
