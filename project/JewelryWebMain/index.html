@@ -102,18 +102,19 @@
       <div class="right-side">
         <div class="topic-text">Send me a message</div>
         <p>If you want to work with me or you have some question, you can send me message from here. It's my pleasure to help you.</p>
-        <form action="#">
+        <form class="row g-3" name="contact" method="POST" data-netlify="true" onSubmit="submit" netlify-honeypot="bot-field">
+          <input class="d-none"name="bot-field">
           <div class="input-box">
-            <input type="text" placeholder="Enter your name" />
+            <input type="text" id="name" name="name" placeholder="Enter your name" />
           </div>
           <div class="input-box">
-            <input type="text" placeholder="Enter your email" />
+            <input type="email" id="email"  name="email" placeholder="Enter your email" />
           </div>
           <div class="input-box message-box">
-            <textarea placeholder="Enter your message"></textarea>
+            <textarea id="message" name="message" placeholder="Enter your message"></textarea>
           </div>
           <div class="button">
-            <input type="button" value="Send Now" />
+            <input type="submit" value="Send Now" />
           </div>
         </form>
       </div>

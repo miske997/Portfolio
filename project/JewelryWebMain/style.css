@@ -506,7 +506,7 @@ nav.navbar ul li a:hover:after {
   display: inline-block;
   margin-top: 12px;
 }
-.right-side .button input[type="button"] {
+.right-side .button input[type="submit"] {
   color: #fff;
   font-size: 18px;
   outline: none;
@@ -517,7 +517,7 @@ nav.navbar ul li a:hover:after {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.button input[type="button"]:hover {
+.button input[type="submit"]:hover {
   background: #1D212B;
   color: #46ca7b;
 
